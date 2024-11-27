@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title class="app-title">MyFit</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding" color="light">
+  <ion-item class="home-container centered-content"> 
+    <ion-card>
+      <ion-card-content>
+        <ion-img src="assets/img/logo.png" alt="Logo de FitnessApp" class="logo"></ion-img>
+
+        <h2 style="color: var(--ion-color-primary-contrast);">Restablece tu Contraseña</h2>
+        <p style="color: var(--ion-text-color);">Ingresa tu usuario para restablecer la contraseña.</p>
+
+        <form (ngSubmit)="onRecuperar()">
+          <ion-list>
+            <ion-item>
+              <ion-label position="fixed">Usuario</ion-label>
+              <ion-input type="text" [(ngModel)]="username" name="username" minlength="3" maxlength="20" required></ion-input>
+            </ion-item>
+
+           
+            <ion-text color="danger" *ngIf="errorMessage">{{ errorMessage }}</ion-text>
+
+            <ion-item class="center-button-container"> 
+              <ion-button expand="block" color="primary" type="submit">Recuperar</ion-button>
+            </ion-item>
+          </ion-list>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+</ion-content>

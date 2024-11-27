@@ -1,0 +1,133 @@
+//CIERTOS AJUSTES PARA DISTINTOS MOVILES
+
+.menu-item {
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  &.active {
+    --background: var(--ion-color-primary); 
+    --color: var(--ion-color-primary-contrast); 
+  }
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  background-color: var(--ion-background-color); 
+  color: var(--ion-text-color); 
+}
+
+ion-title.app-title {
+  text-align: center;
+  transform: translateX(-7%);
+  font-size: 24px;
+  font-weight: normal;
+  color: var(--ion-color-primary-contrast); 
+}
+
+h2 {
+  font-size: 24px;
+  color: var(--ion-color-primary);
+  text-align: center; 
+}
+
+p {
+  font-size: 16px;
+  color: var(--ion-text-color); 
+  text-align: center; 
+}
+
+ion-content {
+  --background: var(--ion-background-color);
+  padding: 0 15px; 
+}
+//TARJETAS
+ion-card {
+  margin: 20px;
+  padding: 10px;
+  background-color: var(--ion-color-primary); 
+  color: var(--ion-color-primary-contrast);
+  width: 100%; 
+  max-width: 600px; 
+}
+
+.summary-card, .progress-card, .tip-card {
+  width: 430px;
+  max-width: 600px; 
+  margin: 20px auto; 
+  text-align: center;
+}
+
+ion-card-content {
+  padding: 20px; 
+}
+
+.stat {
+  text-align: center;
+  padding: 0px;
+}
+
+
+
+.action-button {
+  width: 100%; 
+  max-width: 300px; 
+  height: 30px; 
+  font-size: 16px; 
+  font-weight: bold;
+  background-color: var(--ion-color-primary); 
+  color: var(--ion-color-primary-contrast);
+  margin: 10px 0; 
+  border-radius: 8px; 
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+ion-button {
+  --width: 100%;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+}
+
+.logo {
+  width: 300px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.progress-image {
+  width: 100%;
+  height: auto;
+  max-width: 600px; 
+  margin-top: 10px;
+}
+
+ion-button {
+  width: 100%; 
+  height: auto; 
+}
+
+ion-col {
+  padding: 5px;
+}
+
+@media (max-width: 768px) {
+  .summary-card, .progress-card, .tip-card {
+    max-width: 100%; 
+  }
+
+  ion-col {
+    --ion-grid-column-padding: 0; 
+  }
+}

@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title class="app-title">MyFit</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding" color="light">
+  <ion-item class="home-container centered-content">
+    <ion-card>
+      <ion-card-content>
+        <ion-img src="assets/img/logo.png" alt="Logo de FitnessApp" class="logo"></ion-img>
+
+        <h2 style="color: var(--ion-text-color);">¡Inicia Sesión en FitnessApp!</h2>
+
+        <form (ngSubmit)="login()">
+          <ion-list>
+            <ion-item>
+              <ion-label position="fixed">Correo</ion-label>
+              <ion-input type="text" [(ngModel)]="user.email" name="username" minlength="4" maxlength="30" required></ion-input>
+            </ion-item>
+            <ion-text color="danger" *ngIf="errorUsername">{{ errorUsername }}</ion-text>
+
+            <ion-item>
+              <ion-label position="fixed">Contraseña</ion-label>
+              <ion-input [type]="passwordType" [(ngModel)]="user.password" name="password" minlength="6" maxlength="12" required></ion-input>
+              <ion-button fill="clear" size="small" slot="end" (click)="togglePasswordVisibility()">
+                <ion-icon [name]="passwordIcon"></ion-icon>
+              </ion-button>
+            </ion-item>
+            <ion-text color="danger" *ngIf="errorPassword">{{ errorPassword }}</ion-text>
+
+            <!-- Casilla para mantener la sesión activa -->
+            <ion-item lines="none" class="remember-me-item">
+              <ion-label class="remember-me-label">Mantenerme conectado</ion-label>
+              <ion-checkbox [(ngModel)]="mantenerConectado" name="mantenerConectado"></ion-checkbox>
+            </ion-item>
+
+            <ion-item class="center-button-container">
+              <ion-button expand="block" color="primary" (click)="iraregistro()">Registrarse</ion-button>
+              <ion-button size="small" color="secondary" (click)="irarestablecer()">Restablecer Contraseña</ion-button>
+            </ion-item>
+            <ion-item class="center-button-container">
+              <ion-button expand="block" color="tertiary" (click)="login()">INGRESAR</ion-button>
+            </ion-item>
+          </ion-list>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+</ion-content>

@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding" color="light">
+  <div class="home-container centered-content">
+    <ion-card>
+      <ion-card-content>
+        <ion-avatar class="profile-avatar">
+          <ion-icon name="person-circle-outline" size="large"></ion-icon>
+        </ion-avatar>
+        
+        <h2>Mi Perfil</h2>
+        
+        <ion-list>
+          <ion-item>
+            <ion-label position="floating">Nombre</ion-label>
+            <ion-input type="text" [(ngModel)]="nombre" name="nombre"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Estatura (cm)</ion-label>
+            <ion-input type="number" [(ngModel)]="estatura" name="estatura"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Peso (kg)</ion-label>
+            <ion-input type="number" [(ngModel)]="peso" name="peso"></ion-input>
+          </ion-item>
+
+          <<!-- Animacion, queda por revisar -->>
+          <mat-progress-bar mode="indeterminate" color="primary"></mat-progress-bar>
+
+          <div class="center-button-container">
+            <ion-button expand="block" color="primary" (click)="guardarPerfil()">Guardar</ion-button>
+          </div>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+    <div class="center-button-container">
+      <ion-button size="small" color="secondary" (click)="iralHome()">Ir a Home</ion-button>
+    </div>
+  </div>
+</ion-content>
